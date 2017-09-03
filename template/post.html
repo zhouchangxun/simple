@@ -6,21 +6,23 @@
     <meta name="Keywords" content="blog"/>
     <meta name="Description" content="blog"/>
     <title>Simple</title>
-    <link rel="shortcut icon" href="/static/favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <base href="/myblog/" />
+    <base target="_self" />
+    <link rel="shortcut icon" href="static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
 <div class="main">
     <div class="header">
     	<ul id="pages">
-            <li><a href="/">home</a></li>
-            <li><a href="/#/tags">tags</a></li>
-            <li><a href="/#/archive">archive</a></li>
+            <li><a href="#/">home</a></li>
+            <li><a href="#/tags">tags</a></li>
+            <li><a href="#/archive">archive</a></li>
     	</ul>
     </div>
 	<div class="wrap-header">
 	<h1>
-    <a href="/" id="title"></a>
+    <a href="#/" id="title"></a>
 	</h1>
 	</div>
 <div id="md" style="display: none;">
@@ -46,7 +48,7 @@
     <div class="tag">
     {{date}}
     {{#tags}}
-    <a href="/#/tag/{{name}}">#{{name}}</a>
+    <a href="#/tag/{{name}}">#{{name}}</a>
     {{/tags}}
     </div>
 </script>
