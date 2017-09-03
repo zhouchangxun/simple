@@ -1,4 +1,5 @@
 var global = {};
+global.reponame="myblog";
 var gconfig = null;
 var repo = null;
 var editor = null;
@@ -102,7 +103,8 @@ function checkpass(user, pass, cbsuccess, cberror) {
         if (!cberror(err)) {
             global.github = github;
             global.user = user;
-            repo = github.getRepo(user, user+".github.io");
+            //repo = github.getRepo(user, user+".github.io");
+            repo = github.getRepo(user, global.reponame);
             cbsuccess();
         }
     });
@@ -407,7 +409,7 @@ $(document).ready(function() {
                 var l = content.length;
                 var head = content.substring(0, cursor);
                 var tail = content.substring(cursor, l);
-                var url = " ![](http://"+global.user+".github.io/img/"+name+")";
+                var url = " ![](http://github.com/"+global.user+"/"+global.reponame+"/img/"+name+")";
                 $("#editmd").val(head+"<span class=\"loading\">upload image now!</span>"+tail);
                 mdupdate();
                 repo.write("master", "img/"+name, data, "upload image",
